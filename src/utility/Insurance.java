@@ -1,0 +1,28 @@
+package utility;
+
+public enum Insurance {
+    DANA,
+    ALBORZ,
+    PARSIAN,
+    SINA,
+    RAZI,
+    DEY,
+    MELLAT,
+    OMID,
+    PASARGAD,
+    BAHMAN,
+    MA,
+    SARMAD,
+    IRAN,
+    ASIA,
+    MOALLEM,
+    KARAFARIN,
+    SAMAN,
+    NOVIN,
+    MIHAN,
+    HAFEZ,
+    KOSAR,
+    TAAVON,
+    ARMAN,
+    AZAD,
+}
