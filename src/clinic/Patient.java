@@ -1,7 +1,6 @@
 package clinic;
 
 import utility.Gender;
-import utility.Insurance;
 import utility.Listable;
 import utility.Utility;
 
@@ -53,6 +52,11 @@ public class Patient implements Listable {
         //Create an information file for this patient
         Utility.createInfoFile(informationFile, path, "information.txt", fileWriter,
                 fwExMessage + nationalNumber, bufferedWriter, outFile);
+
+        //Write patients information in file
+        outFile.print(toString());
+
+        addToList();
     }
 
     //Constructor with insurance
@@ -78,13 +82,30 @@ public class Patient implements Listable {
         //Create an information file for this patient
         Utility.createInfoFile(informationFile, path, "information.txt", fileWriter,
                 fwExMessage + nationalNumber, bufferedWriter, outFile);
+
+        //Write patients information in file
+        outFile.print(toString());
+
+        addToList();
     }
 
-    //Add a patient to ArrayList and his information to file
+    //Add a patient to ArrayList
     @Override
     public void addToList() {
         patients.add(new Patient(this.name, this.fatherName, this.age, this.nationalNumber, this.gender,
                 this.insurance, this.insuranceCode, this.expirationDate));
+    }
+
+    @Override
+    public String toString() {
+        return name + "\n"
+                + fatherName + "\n"
+                + age + "\n"
+                + nationalNumber + "\n"
+                + gender.getGender() + "\n"
+                + insurance.getInsuranceName() + "\n"
+                + insuranceCode + "\n"
+                + expirationDate;
     }
 
     public String getName() { return name; }

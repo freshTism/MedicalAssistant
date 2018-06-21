@@ -1,4 +1,4 @@
-package utility;
+package clinic;
 
 public enum Insurance {
 
