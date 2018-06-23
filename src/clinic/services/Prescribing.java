@@ -1,4 +1,4 @@
-package clinic;
+package clinic.services;
 
 public class Prescribing {
 

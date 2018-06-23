@@ -1,4 +1,4 @@
-package clinic;
+package clinic.customer;
 
 public enum Insurance {
 

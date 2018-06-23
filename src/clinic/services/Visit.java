@@ -1,4 +1,4 @@
-package clinic;
+package clinic.services;
 
 import utility.Listable;
 
