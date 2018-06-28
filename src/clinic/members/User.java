@@ -4,7 +4,14 @@ import clinic.customer.Insurance;
 import clinic.customer.Patient;
 import utility.Gender;
 import utility.Listable;
+import utility.Utility;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -16,6 +23,19 @@ public abstract class User implements Listable{
     private String password;
     private Role role;
 
+    private static Path path = Paths.get(".\\data\\users");
+
+    private static File infoFile;
+    private static FileWriter fileWriter;
+    private static String fwExMessage = "Can not create a FileWriter for Users.\n";
+    private static BufferedWriter bufferedWriter;
+    private static PrintWriter outFile;
+
+    //Create and reference a list of users information in a text file
+    static {
+        Utility.createInfoFile(infoFile, path, "infoList.txt", fileWriter, fwExMessage, bufferedWriter, outFile);
+    }
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -23,13 +43,15 @@ public abstract class User implements Listable{
 
     //Register new patient without insurance(free insurance)
     public static void registerNewPatient(String name, String fatherName, int age, int nationalNumber, Gender gender) {
-        new Patient(name, fatherName, age, nationalNumber, gender);
+        Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender);
+        newPatient.saveInfo();
     }
 
     //Register new patient with insurance
     public static void registerNewPatient(String name, String fatherName, int age, int nationalNumber, Gender gender,
                                           Insurance insurance, int insuranceCode, LocalDate expirationDate) {
-        new Patient(name, fatherName, age, nationalNumber, gender, insurance, insuranceCode, expirationDate);
+        Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender, insurance, insuranceCode, expirationDate);
+        newPatient.saveInfo();
     }
 
     public static void searchPatient() {

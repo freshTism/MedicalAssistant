@@ -1,5 +1,6 @@
 package main;
 
+import clinic.customer.Patient;
 import clinic.members.Clerk;
 import clinic.members.Doctor;
 import clinic.members.Role;

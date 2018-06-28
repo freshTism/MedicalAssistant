@@ -2,7 +2,6 @@ package clinic.customer;
 
 import utility.Gender;
 import utility.Listable;
-import utility.Utility;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -32,6 +31,58 @@ public class Patient implements Listable {
     private BufferedWriter bufferedWriter;
     private PrintWriter outFile;
 
+    //Read patients information from their text file and add them to ArrayList
+    static {
+        Path folderPath = Paths.get(".\\data\\patients");
+        File folder = new File(folderPath.toString());
+
+        File[] files = folder.listFiles();
+
+        ArrayList<File> directories = new ArrayList<>();
+        BufferedReader bufferedReader = null;
+        ArrayList<String> dataList = new ArrayList<>();
+        String line;
+
+        if (files.length == 0) {
+            System.out.println("The directory is empty.");
+        } else {
+            //Filter and save directories
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    directories.add(file);
+                }
+            }
+
+            for (File directory : directories) {
+                //Read Patients info
+                try {
+                    bufferedReader = new BufferedReader(new FileReader(directory.getPath() + "\\information.txt"));
+                    while ((line = bufferedReader.readLine()) != null) {
+                        dataList.add(line);
+                    }
+                } catch (FileNotFoundException e) {
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                    ex.printStackTrace();
+                }
+
+                //Add patient to ArrayList
+                if (dataList.get(5).equals("آزاد")) {
+                    patients.add(new Patient(dataList.get(0), dataList.get(1), Integer.parseInt(dataList.get(2)),
+                            Integer.parseInt(dataList.get(3)), Gender.valueOf(dataList.get(4))));
+                } else {
+                    patients.add(new Patient(dataList.get(0), dataList.get(1), Integer.parseInt(dataList.get(2)),
+                            Integer.parseInt(dataList.get(3)), Gender.valueOf(dataList.get(4)),
+                            Insurance.valueOf(dataList.get(5)), Integer.parseInt(dataList.get(6)),
+                            LocalDate.parse(dataList.get(7))));
+                }
+                dataList.clear();
+            }
+        }
+    } //end static block
+
     //Constructor without insurance(free insurance)
     public Patient(String name, String fatherName, int age, int nationalNumber, Gender gender) {
         this.name = name;
@@ -40,23 +91,6 @@ public class Patient implements Listable {
         this.nationalNumber = nationalNumber;
         this.gender = gender;
         this.insurance = Insurance.AZAD;
-
-        //Create a directory for this patient
-        try {
-            Files.createDirectories(path.resolve(String.valueOf(nationalNumber)));
-        } catch (IOException e) {
-            System.out.println("Can not make a directory for Patient whit national number: " + nationalNumber);
-            e.printStackTrace();
-        }
-
-        //Create an information file for this patient
-        Utility.createInfoFile(informationFile, path, "information.txt", fileWriter,
-                fwExMessage + nationalNumber, bufferedWriter, outFile);
-
-        //Write patients information in file
-        outFile.print(toString());
-
-        addToList();
     }
 
     //Constructor with insurance
@@ -70,23 +104,35 @@ public class Patient implements Listable {
         this.insurance = insurance;
         this.insuranceCode = insuranceCode;
         this.expirationDate = expirationDate;
+    }
 
-        //Create a directory for this patient
+    //Create a directory for this patient
+    private void createDirectory() {
         try {
             Files.createDirectories(path.resolve(String.valueOf(nationalNumber)));
         } catch (IOException e) {
-            System.out.println("Can not make a directory for Patient whit national number: " + nationalNumber);
+            System.out.println("Can not make a directory for Patient whit national number: " + nationalNumber + "\n");
             e.printStackTrace();
         }
+    }
 
-        //Create an information file for this patient
-        Utility.createInfoFile(informationFile, path, "information.txt", fileWriter,
-                fwExMessage + nationalNumber, bufferedWriter, outFile);
+    //Create new "appendable" text file
+    private void createInfoFile(String fileName, String exceptionMessage) {
+        informationFile = new File(path + fileName);
+        try {
+            fileWriter = new FileWriter(informationFile, true);
+        } catch (IOException e) {
+            System.out.println(exceptionMessage);
+            e.printStackTrace();
+        }
+        bufferedWriter = new BufferedWriter(fileWriter);
+        outFile = new PrintWriter(bufferedWriter);
+    }
 
-        //Write patients information in file
+    //Write patients information in file
+    private void writeInfoToFile() {
         outFile.print(toString());
-
-        addToList();
+        outFile.close();
     }
 
     //Add a patient to ArrayList
@@ -94,6 +140,14 @@ public class Patient implements Listable {
     public void addToList() {
         patients.add(new Patient(this.name, this.fatherName, this.age, this.nationalNumber, this.gender,
                 this.insurance, this.insuranceCode, this.expirationDate));
+    }
+
+    //Create a text file and save patient info to file and ArrayList
+    public void saveInfo() {
+        createDirectory();
+        createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
+        writeInfoToFile();
+        addToList();
     }
 
     @Override
