@@ -159,7 +159,7 @@ public class Patient implements Listable {
                 + gender.getGender() + "\n"
                 + insurance.getInsuranceName() + "\n"
                 + insuranceCode + "\n"
-                + expirationDate;
+                + expirationDate + "\n";
     }
 
     public String getName() { return name; }

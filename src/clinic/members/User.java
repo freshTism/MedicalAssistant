@@ -4,18 +4,14 @@ import clinic.customer.Insurance;
 import clinic.customer.Patient;
 import utility.Gender;
 import utility.Listable;
-import utility.Utility;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public abstract class User implements Listable{
+public abstract class User implements Listable {
 
     private static ArrayList<User> users = new ArrayList<>();
 
@@ -31,14 +27,55 @@ public abstract class User implements Listable{
     private static BufferedWriter bufferedWriter;
     private static PrintWriter outFile;
 
+    protected abstract void saveInfo();
+
     //Create and reference a list of users information in a text file
     static {
-        Utility.createInfoFile(infoFile, path, "infoList.txt", fileWriter, fwExMessage, bufferedWriter, outFile);
+        //Reference the text file
+        createInfoFile("infoList.txt", fwExMessage);
+
+        BufferedReader bufferedReader = null;
+        String[] userInfo = new String[3];
+        String line;
+
+        //Add clerk ad doctors to ArrayList
+        try {
+            bufferedReader = new BufferedReader(new FileReader(path + "\\infoList.txt"));
+            while ((line = bufferedReader.readLine()) != null) {
+                userInfo[0] = line;
+                userInfo[1] = bufferedReader.readLine();
+                userInfo[2] = bufferedReader.readLine();
+                bufferedReader.readLine();
+                if (userInfo[0].equals("منشی")) {
+                    users.add(new Clerk(userInfo[1], userInfo[2]));
+                } else if (userInfo[0].equals("پزشک")) {
+                    users.add(new Doctor(userInfo[1], userInfo[2]));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
     }
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    private static void createInfoFile(String fileName, String exceptionMessage) {
+        infoFile = new File(path + fileName);
+        try {
+            fileWriter = new FileWriter(infoFile, true);
+        } catch (IOException e) {
+            System.out.println(exceptionMessage);
+            e.printStackTrace();
+        }
+        bufferedWriter = new BufferedWriter(fileWriter);
+        outFile = new PrintWriter(bufferedWriter);
     }
 
     //Register new patient without insurance(free insurance)
