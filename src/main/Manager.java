@@ -10,10 +10,12 @@ public abstract class Manager {
     public static void registerNewUser(Role role, String username, String password) {
         switch (role) {
             case CLERK:
-                new Clerk(username, password);
+                Clerk newClerk = new Clerk(username, password);
+                newClerk.saveInfo();
                 break;
             case DOCTOR:
-                new Doctor(username, password);
+                Doctor newDoctor = new Doctor(username, password);
+                newDoctor.saveInfo();
                 break;
         }
     }

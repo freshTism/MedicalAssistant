@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public abstract class User implements Listable {
 
-    private static ArrayList<User> users = new ArrayList<>();
+    protected static ArrayList<User> users = new ArrayList<>();
 
-    private String username;
-    private String password;
-    private Role role;
+    protected String username;
+    protected String password;
+    protected Role role;
 
     private static Path path = Paths.get(".\\data\\users");
 
@@ -25,9 +25,9 @@ public abstract class User implements Listable {
     private static FileWriter fileWriter;
     private static String fwExMessage = "Can not create a FileWriter for Users.\n";
     private static BufferedWriter bufferedWriter;
-    private static PrintWriter outFile;
+    protected static PrintWriter outFile;
 
-    protected abstract void saveInfo();
+    public abstract void saveInfo();
 
     //Create and reference a list of users information in a text file
     static {
