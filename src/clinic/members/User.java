@@ -2,6 +2,8 @@ package clinic.members;
 
 import clinic.customer.Insurance;
 import clinic.customer.Patient;
+import exceptions.loginExceptions.IncorrectPaswordException;
+import exceptions.loginExceptions.UserNotFoundException;
 import utility.Gender;
 import utility.Listable;
 
@@ -76,6 +78,34 @@ public abstract class User implements Listable {
         }
         bufferedWriter = new BufferedWriter(fileWriter);
         outFile = new PrintWriter(bufferedWriter);
+    }
+
+
+    //Search a user in "users" ArrayList with username
+    private static User searchUser(String wantedUsername) throws UserNotFoundException {
+        boolean find = false;
+        User target = null;
+        for (int i = 0; !find && i < users.size() ; i++) {
+            if (users.get(i).username.equals(wantedUsername)) {
+                find = true;
+                target = users.get(i);
+            }
+        }
+        if (target != null) {
+                return target;
+        } else {
+            throw new UserNotFoundException("The username does not match any account!");
+        }
+    }
+
+    //Check the username and password and if true return a user
+    public static User login(String username, String password) throws UserNotFoundException, IncorrectPaswordException {
+        User target = searchUser(username);
+            if (target.password == password) {                  //Check password
+                return target;
+            } else {
+                throw new IncorrectPaswordException("Incorrect password!");
+            }
     }
 
     //Register new patient without insurance(free insurance)

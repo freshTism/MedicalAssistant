@@ -1,9 +1,11 @@
 package main;
 
-import clinic.customer.Patient;
 import clinic.members.Clerk;
 import clinic.members.Doctor;
 import clinic.members.Role;
+import clinic.members.User;
+import exceptions.loginExceptions.IncorrectPaswordException;
+import exceptions.loginExceptions.UserNotFoundException;
 
 public abstract class Manager {
 
@@ -18,6 +20,10 @@ public abstract class Manager {
                 newDoctor.saveInfo();
                 break;
         }
+    }
+
+    public static User login(String username, String password) throws UserNotFoundException, IncorrectPaswordException {
+        return User.login(username, password);
     }
 
 }
