@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #4CCA72;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.registerUserController">
+    <children>
+        <JFXTextField fx:id="username" focusColor="#515c6b" layoutX="470.0" layoutY="336.0" prefHeight="39.0" prefWidth="260.0" promptText="username" style="-fx-prompt-text-fill: #ffffff;" unFocusColor="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </JFXTextField>
+        <JFXPasswordField fx:id="password" focusColor="#515c6b" layoutX="470.0" layoutY="408.0" prefHeight="39.0" prefWidth="260.0" promptText="password" style="-fx-prompt-text-fill: #ffffff;" unFocusColor="WHITE" />
+        <Label layoutX="443.0" layoutY="115.0" text="دستیار پزشک" textFill="#515c6b" AnchorPane.rightAnchor="443.0">
+            <font>
+                <Font name="IRANSans" size="59.0" />
+            </font>
+        </Label>
+        <JFXButton buttonType="RAISED" layoutX="470.0" layoutY="586.0" onMouseClicked="#registerUser" prefHeight="22.0" prefWidth="260.0" ripplerFill="#d8f0de" style="-fx-background-color: #4CCA72;" text="ثبت" textAlignment="CENTER" textFill="#515c6b" textOverrun="LEADING_ELLIPSIS">
+            <font>
+                <Font name="IRANSans" size="20.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="67.0" fitWidth="40.0" layoutX="423.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../../../Downloads/icons8-male-user-96%20(1).png" />
+            </image>
+        </ImageView>
+        <Label layoutX="526.0" layoutY="716.0" prefHeight="20.0" prefWidth="148.0" text="© Fereshte Nasirpour" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="526.0" />
+        <ImageView fitHeight="67.0" fitWidth="40.0" layoutX="423.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../../../Downloads/icons8-secure-96.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="67.0" fitWidth="40.0" layoutX="1146.0" layoutY="14.0" onMouseClicked="#exitProgram" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <image>
+                <Image url="@../../../../../../../../../Downloads/icons8-cancel-96.png" />
+            </image>
+        </ImageView>
+      <ChoiceBox layoutX="470.0" layoutY="490.0" prefHeight="39.0" prefWidth="260.0" />
+      <Label layoutX="414.0" layoutY="490.0" text=": نقش" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="IRANSans" size="19.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

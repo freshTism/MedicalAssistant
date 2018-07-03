@@ -4,6 +4,7 @@ import clinic.customer.Insurance;
 import clinic.customer.Patient;
 import exceptions.loginExceptions.IncorrectPaswordException;
 import exceptions.loginExceptions.UserNotFoundException;
+import exceptions.patientExcetions.PatientNotFoundException;
 import utility.Gender;
 import utility.Listable;
 
@@ -121,10 +122,20 @@ public abstract class User implements Listable {
         newPatient.saveInfo();
     }
 
-    public static void searchPatient() {
-
-
-
+    public static Patient searchPatient(int nationalNumber) throws PatientNotFoundException {
+        boolean find = false;
+        Patient target = null;
+        for (int i = 0; !find && i < Patient.getPatients().size(); i++) {
+            if (Patient.getPatients().get(i).getNationalNumber() == nationalNumber) {
+                target = Patient.getPatients().get(i);
+                find = true;
+            }
+        }
+        if (target != null) {
+            return target;
+        } else {
+            throw new PatientNotFoundException("Patient NOT Found!");
+        }
     }
 
     public static ArrayList<User> getUsers() { return users; }
