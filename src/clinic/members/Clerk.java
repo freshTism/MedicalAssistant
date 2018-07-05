@@ -17,8 +17,13 @@ public class Clerk extends User {
     }
 
     private void writeInfoToFile() {
-        outFile.println(toString());
-        //کی باید فایلو ببندم؟
+        //Reference the text file
+        createInfoFile("infoList.txt", fwExMessage);
+        outFile.println("منشی");
+        outFile.println(username);
+        outFile.println(password);
+        outFile.println(" ");
+        outFile.close();
     }
 
     @Override

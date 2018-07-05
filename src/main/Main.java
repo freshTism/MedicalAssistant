@@ -2,25 +2,26 @@ package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-    private Stage primaryStage;
-    private BorderPane mainLayout;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Medical Assistant");
-        this.primaryStage.initStyle(StageStyle.UNDECORATED);
-        showMainView();
-    }
-
-    private void showMainView(){
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(gui.Login);
+    public void start(Stage stage) throws Exception {
+        try {
+            AnchorPane loginPage = FXMLLoader.load(getClass().getResource("/gui/fxml/login.fxml"));
+            Scene scene = new Scene(loginPage);
+            stage.setTitle("Medical Assistant");
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) { launch(args); }

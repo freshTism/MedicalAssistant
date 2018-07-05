@@ -26,7 +26,7 @@ public abstract class User implements Listable {
 
     private static File infoFile;
     private static FileWriter fileWriter;
-    private static String fwExMessage = "Can not create a FileWriter for Users.\n";
+    protected static String fwExMessage = "Can not create a FileWriter for Users.\n";
     private static BufferedWriter bufferedWriter;
     protected static PrintWriter outFile;
 
@@ -69,8 +69,8 @@ public abstract class User implements Listable {
         this.password = password;
     }
 
-    private static void createInfoFile(String fileName, String exceptionMessage) {
-        infoFile = new File(path + fileName);
+    protected static void createInfoFile(String fileName, String exceptionMessage) {
+        infoFile = new File(path + "\\" + fileName);
         try {
             fileWriter = new FileWriter(infoFile, true);
         } catch (IOException e) {

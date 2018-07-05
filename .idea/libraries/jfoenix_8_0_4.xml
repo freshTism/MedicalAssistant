@@ -2,8 +2,13 @@
   <library name="jfoenix-8.0.4">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/jfoenix-8.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

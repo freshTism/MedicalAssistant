@@ -131,7 +131,26 @@ public class Patient implements Listable {
 
     //Write patients information in file
     private void writeInfoToFile() {
-        outFile.print(toString());
+        createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
+        if (insurance.equals(Insurance.AZAD)) {
+            outFile.println(name);
+            outFile.println(fatherName);
+            outFile.println(age);
+            outFile.println(nationalNumber);
+            outFile.println(gender.getGender());
+            outFile.println(insurance.getInsuranceName());
+            outFile.println(" ");
+        } else {
+            outFile.println(name);
+            outFile.println(fatherName);
+            outFile.println(age);
+            outFile.println(nationalNumber);
+            outFile.println(gender.getGender());
+            outFile.println(insurance.getInsuranceName());
+            outFile.println(insuranceCode);
+            outFile.println(expirationDate);
+            outFile.println(" ");
+        }
         outFile.close();
     }
 
