@@ -70,7 +70,7 @@ public class registerUserController {
     }
 
     @FXML
-    void goToLoginPage(MouseEvent event) throws IOException {
+    private void goToLoginPage(MouseEvent event) throws IOException {
         AnchorPane loginPage = FXMLLoader.load(getClass().getResource("/gui/fxml/login.fxml"));
         Scene nextScene = new Scene(loginPage);
         Stage currentStage = (Stage) exitIcon.getScene().getWindow();
@@ -78,19 +78,19 @@ public class registerUserController {
     }
 
     @FXML
-    void moveStageOnMouseDragged(MouseEvent event) {
+    private void moveStageOnMouseDragged(MouseEvent event) {
         exitIcon.getScene().getWindow().setX(event.getScreenX() + x);
         exitIcon.getScene().getWindow().setY(event.getScreenY() + y);
     }
 
     @FXML
-    void moveStageOnMousePressed(MouseEvent event) {
+    private void moveStageOnMousePressed(MouseEvent event) {
         x = exitIcon.getScene().getWindow().getX() - event.getScreenX();
         y = exitIcon.getScene().getWindow().getY() - event.getScreenY();
     }
 
     @FXML
-    void initialize() {
+    private void initialize() {
         roleCB.setValue(Role.CLERK.getRole());
         roleCB.setItems(roles);
 

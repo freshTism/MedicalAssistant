@@ -5,24 +5,19 @@ import clinic.members.User;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
-import java.io.File;
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ResourceBundle;
-
 import exceptions.loginExceptions.IncorrectPaswordException;
 import exceptions.loginExceptions.UserNotFoundException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import main.Manager;
+
+import java.io.IOException;
 
 public class LoginController {
 
@@ -49,11 +44,18 @@ public class LoginController {
     }
 
     @FXML
-    private void loginUser(MouseEvent event) {
+    private void loginUser(MouseEvent event) throws IOException {
         String enteredUsername = usernameTF.getText();
         String enteredPassword = passwordPF.getText();
+        User user;
+        AnchorPane menuPage = null;
         try {
-            User user = Manager.login(enteredUsername,enteredPassword);
+            user = Manager.login(enteredUsername,enteredPassword);
+            if (user.getRole().equals(Role.CLERK)) {
+                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/clerkMenu.fxml"));
+            } else if (user.getRole().equals(Role.DOCTOR)) {
+                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/doctorMenu.fxml"));
+            }
         } catch (UserNotFoundException e) {
             incorrectPassLable.setVisible(false);
             invalidUsernameLable.setVisible(true);
@@ -61,7 +63,10 @@ public class LoginController {
             invalidUsernameLable.setVisible(false);
             incorrectPassLable.setVisible(true);
         }
-        //AnchorPane
+
+        Scene scene = new Scene(menuPage);
+        Stage currentStage = (Stage) usernameTF.getScene().getWindow();
+        currentStage.setScene(scene);
     }
 
     @FXML
@@ -73,19 +78,19 @@ public class LoginController {
     }
 
     @FXML
-    void moveStageOnMouseDragged(MouseEvent event) {
+    private void moveStageOnMouseDragged(MouseEvent event) {
         exitIcon.getScene().getWindow().setX(event.getScreenX() + x);
         exitIcon.getScene().getWindow().setY(event.getScreenY() + y);
     }
 
     @FXML
-    void moveStageOnMousePressed(MouseEvent event) {
+    private void moveStageOnMousePressed(MouseEvent event) {
         x = exitIcon.getScene().getWindow().getX() - event.getScreenX();
         y = exitIcon.getScene().getWindow().getY() - event.getScreenY();
     }
 
     @FXML
-    void initialize() {
+    private void initialize() {
         assert usernameTF != null : "fx:id=\"username\" was not injected: check your FXML file 'login.fxml'.";
         assert passwordPF != null : "fx:id=\"password\" was not injected: check your FXML file 'login.fxml'.";
 
@@ -93,6 +98,4 @@ public class LoginController {
         ControllerManager.setIconImage(".\\images\\icons\\secure.png", passwordIcon);
         ControllerManager.setIconImage(".\\images\\icons\\cancel.png", exitIcon);
     }
-
-
 }

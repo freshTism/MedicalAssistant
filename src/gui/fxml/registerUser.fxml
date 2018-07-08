@@ -23,7 +23,7 @@
                 <Font name="IRANSans" size="59.0" />
             </font>
         </Label>
-        <JFXButton buttonType="RAISED" layoutX="470.0" layoutY="586.0" onMouseClicked="#registerUser" prefHeight="22.0" prefWidth="260.0" ripplerFill="#d8f0de" style="-fx-background-color: #4CCA72;" text="ثبت" textAlignment="CENTER" textFill="#515c6b" textOverrun="LEADING_ELLIPSIS">
+        <JFXButton buttonType="RAISED" layoutX="470.0" layoutY="586.0" onMouseClicked="#registerUser" prefHeight="22.0" prefWidth="260.0" ripplerFill="#d8f0de" style="-fx-background-color: #4CCA72;" text="ثبت نام" textAlignment="CENTER" textFill="#515c6b" textOverrun="LEADING_ELLIPSIS">
             <font>
                 <Font name="IRANSans" size="20.0" />
             </font>

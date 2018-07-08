@@ -36,4 +36,17 @@ public enum Insurance {
     public String getInsuranceName() {
         return insuranceName;
     }
+
+    public static Insurance searchWithName(String name) {
+        Insurance result = null;
+
+        for (Insurance insurance : Insurance.values()) {
+            if (insurance.getInsuranceName().equals(name)) {
+                result = insurance;
+                break;
+            }
+        }
+
+        return result;
+    }
 }

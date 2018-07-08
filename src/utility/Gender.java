@@ -14,4 +14,17 @@ public enum Gender {
     public String getGender() {
         return gender;
     }
+
+    public static Gender searchWithName(String name) {
+        Gender result = null;
+
+        for (Gender gender : Gender.values()) {
+            if (gender.getGender().equals(name)) {
+                result = gender;
+                break;
+            }
+        }
+
+        return result;
+    }
 }

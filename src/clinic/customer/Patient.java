@@ -71,11 +71,11 @@ public class Patient implements Listable {
                 //Add patient to ArrayList
                 if (dataList.get(5).equals("آزاد")) {
                     patients.add(new Patient(dataList.get(0), dataList.get(1), Integer.parseInt(dataList.get(2)),
-                            Integer.parseInt(dataList.get(3)), Gender.valueOf(dataList.get(4))));
+                            Integer.parseInt(dataList.get(3)), Gender.searchWithName(dataList.get(4))));
                 } else {
                     patients.add(new Patient(dataList.get(0), dataList.get(1), Integer.parseInt(dataList.get(2)),
-                            Integer.parseInt(dataList.get(3)), Gender.valueOf(dataList.get(4)),
-                            Insurance.valueOf(dataList.get(5)), Integer.parseInt(dataList.get(6)),
+                            Integer.parseInt(dataList.get(3)), Gender.searchWithName(dataList.get(4)),
+                            Insurance.searchWithName(dataList.get(5)), Integer.parseInt(dataList.get(6)),
                             LocalDate.parse(dataList.get(7))));
                 }
                 dataList.clear();
@@ -109,7 +109,7 @@ public class Patient implements Listable {
     //Create a directory for this patient
     private void createDirectory() {
         try {
-            Files.createDirectories(path.resolve(String.valueOf(nationalNumber)));
+            path = Files.createDirectories(path.resolve(String.valueOf(nationalNumber)));
         } catch (IOException e) {
             System.out.println("Can not make a directory for Patient whit national number: " + nationalNumber + "\n");
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class Patient implements Listable {
 
     //Create new "appendable" text file
     private void createInfoFile(String fileName, String exceptionMessage) {
-        informationFile = new File(path + fileName);
+        informationFile = new File(path + "\\" + fileName);
         try {
             fileWriter = new FileWriter(informationFile, true);
         } catch (IOException e) {

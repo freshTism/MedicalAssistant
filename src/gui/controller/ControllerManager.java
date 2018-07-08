@@ -14,7 +14,6 @@ import java.nio.file.Paths;
 
 public class ControllerManager {
 
-
     //Set icon image
     protected static Path iconPath;
     protected static File iconFile;

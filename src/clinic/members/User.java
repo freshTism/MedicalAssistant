@@ -22,6 +22,9 @@ public abstract class User implements Listable {
     protected String password;
     protected Role role;
 
+    public static String usernameLogedIn;
+    public static Role roledLogedIn;
+
     private static Path path = Paths.get(".\\data\\users");
 
     private static File infoFile;
@@ -102,7 +105,9 @@ public abstract class User implements Listable {
     //Check the username and password and if true return a user
     public static User login(String username, String password) throws UserNotFoundException, IncorrectPaswordException {
         User target = searchUser(username);
-            if (target.password == password) {                  //Check password
+            if (target.password.equals(password)) {                  //Check password
+                usernameLogedIn = target.username;
+                roledLogedIn = target.role;
                 return target;
             } else {
                 throw new IncorrectPaswordException("Incorrect password!");
@@ -111,14 +116,15 @@ public abstract class User implements Listable {
 
     //Register new patient without insurance(free insurance)
     public static void registerNewPatient(String name, String fatherName, int age, int nationalNumber, Gender gender) {
-        Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender);
-        newPatient.saveInfo();
+            Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender);
+            newPatient.saveInfo();
     }
 
     //Register new patient with insurance
     public static void registerNewPatient(String name, String fatherName, int age, int nationalNumber, Gender gender,
                                           Insurance insurance, int insuranceCode, LocalDate expirationDate) {
-        Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender, insurance, insuranceCode, expirationDate);
+        Patient newPatient = new Patient(name, fatherName, age, nationalNumber, gender, insurance, insuranceCode,
+                expirationDate);
         newPatient.saveInfo();
     }
 
