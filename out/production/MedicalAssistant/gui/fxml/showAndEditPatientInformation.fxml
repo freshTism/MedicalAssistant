@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
@@ -20,56 +20,46 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseDragged="#moveStageOnMouseDragged" onMousePressed="#moveStageOnMousePressed" prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #4CCA72;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DoctorMenuController">
+<AnchorPane onMouseDragged="#moveStageOnMouseDragged" onMousePressed="#moveStageOnMousePressed" prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #4CCA72;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ShowAndEditPatientInformationController">
     <children>
-        <ImageView fx:id="exitIcon" fitHeight="67.0" fitWidth="40.0" layoutX="1146.0" layoutY="14.0" onMouseClicked="#exitProgram" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
-            <image>
-                <Image url="@../../../images/icons/cancel.png" />
-            </image>
-        </ImageView>
-        <Label fx:id="invalidUsernameLable" layoutX="526.0" layoutY="465.0" text="نام کاربری نامعتبر است." textFill="#b54b4b" visible="false">
-            <font>
-                <Font name="IRANSans Bold" size="16.0" />
-            </font>
-        </Label>
-        <Label fx:id="incorrectPassLable" layoutX="530.0" layoutY="465.0" text="رمز عبور نادرست است." textFill="#b54b4b" visible="false">
-            <font>
-                <Font name="IRANSans Bold" size="16.0" />
-            </font>
-        </Label>
         <BorderPane prefHeight="750.0" prefWidth="1200.0">
             <right>
                 <AnchorPane prefHeight="750.0" prefWidth="264.0" BorderPane.alignment="CENTER">
                     <children>
-                        <JFXButton buttonType="RAISED" layoutY="132.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" text="ثبت بیمار جدید" textAlignment="CENTER" textFill="#515c6b" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <Label fx:id="roleLabel" layoutX="202.0" layoutY="14.0" text="نقش" textFill="#fbfdff">
                             <font>
-                                <Font name="IRANSans Bold" size="15.0" />
+                                <Font name="IRANSans" size="15.0" />
                             </font>
-                            <ripplerFill>
-                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                    <stops>
-                                        <Stop color="#adadada8" />
-                                        <Stop color="#adadada8" offset="0.007380073800738007" />
-                                        <Stop color="#aeaeaea8" offset="1.0" />
-                                    </stops>
-                                </RadialGradient>
-                            </ripplerFill>
-                        </JFXButton>
-                        <JFXButton layoutY="228.0" prefHeight="96.0" prefWidth="200.0" ripplerFill="#d8f0de" text="مشاهده و ویرایش اطلاعات بیمار" textFill="#fbfdff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        </Label>
+                        <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="174.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" text="نام کاربری" textAlignment="RIGHT" textFill="#fbfdff">
+                            <font>
+                                <Font name="IRANSans" size="15.0" />
+                            </font>
+                        </Label>
+                        <JFXButton layoutY="324.0" onMouseClicked="#goSearchAndVisitPatient" prefHeight="96.0" prefWidth="200.0" ripplerFill="#d8f0de" text="ویزیت بیمار" textFill="#fbfdff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <font>
                                 <Font name="IRANSans Bold" size="15.0" />
                             </font>
                         </JFXButton>
-                        <Label layoutX="202.0" layoutY="14.0" text="نقش" textFill="#fbfdff">
-                            <font>
-                                <Font name="IRANSans Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="174.0" layoutY="56.0" text="نام کاربری" textFill="#fbfdff">
-                            <font>
-                                <Font name="IRANSans Bold" size="15.0" />
-                            </font>
-                        </Label>
+                  <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="228.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" text="مشاهده و ویرایش اطلاعات بیمار" textAlignment="CENTER" textFill="#515c6b" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="IRANSans Bold" size="15.0" />
+                     </font>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#adadada8" />
+                              <Stop color="#adadada8" offset="0.007380073800738007" />
+                              <Stop color="#aeaeaea8" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton layoutX="4.0" layoutY="132.0" onMouseClicked="#goRegisterPatient" prefHeight="96.0" prefWidth="200.0" ripplerFill="#d8f0de" text="ثبت بیمار جدید" textFill="#fbfdff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="IRANSans Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
                     </children>
                 </AnchorPane>
             </right>
@@ -132,7 +122,7 @@
                                         <Font name="IRANSans" size="15.0" />
                                     </font>
                                 </Label>
-                                <JFXTextField alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae">
+                                <JFXTextField fx:id="nameTF" alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae">
                                     <opaqueInsets>
                                         <Insets />
                                     </opaqueInsets>
@@ -140,22 +130,12 @@
                                         <Insets right="15.0" />
                                     </GridPane.margin>
                                 </JFXTextField>
-                                <JFXTextField alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="1">
+                                <JFXTextField fx:id="fatherNameTF" alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="1">
                                     <GridPane.margin>
                                         <Insets right="15.0" />
                                     </GridPane.margin>
                                 </JFXTextField>
-                                <ChoiceBox prefWidth="150.0" style="-fx-background-color: #F0F0F0;" GridPane.rowIndex="5">
-                                    <GridPane.margin>
-                                        <Insets right="15.0" />
-                                    </GridPane.margin>
-                                </ChoiceBox>
-                                <JFXDatePicker disable="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="271.0" style="-fx-background-color: #F0F0F0;" GridPane.rowIndex="7">
-                                    <GridPane.margin>
-                                        <Insets right="15.0" />
-                                    </GridPane.margin>
-                                </JFXDatePicker>
-                                <JFXTextField alignment="CENTER_RIGHT" focusColor="#4cca72" layoutX="10.0" layoutY="31.0" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="2">
+                                <JFXTextField fx:id="ageTF" alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="2">
                                     <opaqueInsets>
                                         <Insets />
                                     </opaqueInsets>
@@ -163,7 +143,7 @@
                                         <Insets right="15.0" />
                                     </GridPane.margin>
                                 </JFXTextField>
-                                <JFXTextField alignment="CENTER_RIGHT" focusColor="#4cca72" layoutX="10.0" layoutY="174.0" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="3">
+                                <JFXTextField fx:id="nationalNumberTF" alignment="CENTER_RIGHT" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="3">
                                     <opaqueInsets>
                                         <Insets />
                                     </opaqueInsets>
@@ -171,7 +151,7 @@
                                         <Insets right="15.0" />
                                     </GridPane.margin>
                                 </JFXTextField>
-                                <JFXTextField alignment="CENTER_RIGHT" disable="true" focusColor="#4cca72" layoutX="10.0" layoutY="245.0" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="6">
+                                <JFXTextField fx:id="insuranceCodeTF" alignment="CENTER_RIGHT" disable="true" focusColor="#4cca72" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="6">
                                     <opaqueInsets>
                                         <Insets />
                                     </opaqueInsets>
@@ -181,24 +161,52 @@
                                 </JFXTextField>
                                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="4">
                                     <children>
-                                        <JFXRadioButton nodeOrientation="RIGHT_TO_LEFT" text="زن">
+                                        <JFXRadioButton fx:id="femaleRB" nodeOrientation="RIGHT_TO_LEFT" selected="true" text="زن">
                                             <toggleGroup>
-                                                <ToggleGroup fx:id="gender" />
+                                                <ToggleGroup fx:id="genderTG" />
                                             </toggleGroup>
                                         </JFXRadioButton>
-                                        <JFXRadioButton nodeOrientation="RIGHT_TO_LEFT" text="مرد" toggleGroup="$gender" />
+                                        <JFXRadioButton fx:id="maleRB" nodeOrientation="RIGHT_TO_LEFT" text="مرد" toggleGroup="$genderTG" />
                                     </children>
                                     <GridPane.margin>
                                         <Insets right="15.0" />
                                     </GridPane.margin>
                                 </HBox>
+                                <DatePicker fx:id="expirationDateDP" disable="true" prefHeight="30.0" prefWidth="273.0" style="-fx-background-color: #F0F0F0;" GridPane.rowIndex="7">
+                                    <GridPane.margin>
+                                        <Insets right="15.0" />
+                                    </GridPane.margin>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </DatePicker>
+                                <JFXComboBox fx:id="insuranceCB" focusColor="#4cca72" nodeOrientation="RIGHT_TO_LEFT" onAction="#insuranceCBChoice" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #F0F0F0;" unFocusColor="#aeaeae" GridPane.rowIndex="5">
+                                    <GridPane.margin>
+                                        <Insets right="15.0" />
+                                    </GridPane.margin>
+                                </JFXComboBox>
                             </children>
                         </GridPane>
-                        <JFXButton buttonType="RAISED" layoutX="398.0" layoutY="598.0" onMouseClicked="#goRegisterUser" prefHeight="59.0" prefWidth="141.0" ripplerFill="#d8f0de" style="-fx-background-color: #4CCA72;" text="ثبت" textAlignment="CENTER" textFill="#515c6b" textOverrun="LEADING_ELLIPSIS">
+                        <JFXButton buttonType="RAISED" layoutX="398.0" layoutY="598.0" onMouseClicked="#editPatientInformation" prefHeight="59.0" prefWidth="141.0" ripplerFill="#d8f0de" style="-fx-background-color: #4CCA72;" text="ویرایش" textAlignment="CENTER" textFill="#515c6b" textOverrun="LEADING_ELLIPSIS">
                             <font>
                                 <Font name="IRANSans" size="20.0" />
                             </font>
                         </JFXButton>
+                        <Label fx:id="successfulEditPatientInformationLabel" layoutX="337.0" layoutY="556.0" text="ویرایش اطلاعات بیمار با موفقیت انجام شد" textAlignment="CENTER" textFill="#b54b4b" visible="false">
+                            <font>
+                                <Font name="IRANSans Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="unsuccessfulEditPatientInformationLabel" layoutX="350.0" layoutY="556.0" text="عدم موفقیت در ویرایش اطلاعات بیمار!" textFill="#b54b4b" visible="false">
+                            <font>
+                                <Font name="IRANSans Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="patientInformationIncompleteLabel" layoutX="374.0" layoutY="556.0" text="اطلاعات وارد شده ناقص است!" textAlignment="CENTER" textFill="#b54b4b" visible="false">
+                            <font>
+                                <Font name="IRANSans Bold" size="16.0" />
+                            </font>
+                        </Label>
                     </children>
                 </AnchorPane>
             </center>
@@ -206,5 +214,10 @@
                 <AnchorPane prefHeight="60.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
             </top>
         </BorderPane>
+        <ImageView fx:id="exitIcon" fitHeight="67.0" fitWidth="40.0" layoutX="1146.0" layoutY="14.0" onMouseClicked="#exitProgram" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <image>
+                <Image url="@../../../images/icons/cancel.png" />
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>

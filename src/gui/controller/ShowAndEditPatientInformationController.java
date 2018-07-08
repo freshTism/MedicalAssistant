@@ -1,6 +1,7 @@
 package gui.controller;
 
 import clinic.customer.Insurance;
+import clinic.customer.Patient;
 import clinic.members.User;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
@@ -10,7 +11,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,7 +24,7 @@ import utility.Utility;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class ClerkMenuController {
+public class ShowAndEditPatientInformationController {
 
     ObservableList<String> insurances = FXCollections.observableArrayList(Insurance.AZAD.getInsuranceName(),
             Insurance.ALBORZ.getInsuranceName(), Insurance.ARMAN.getInsuranceName(), Insurance.ASIA.getInsuranceName(),
@@ -60,9 +63,9 @@ public class ClerkMenuController {
     @FXML
     private DatePicker expirationDateDP;
     @FXML
-    private Label successfulRegisterPatientLabel;
+    private Label successfulEditPatientInformationLabel;
     @FXML
-    private Label unsuccessfulRegisterPatientLabel;
+    private Label unsuccessfulEditPatientInformationLabel;
     @FXML
     private Label patientInformationIncompleteLabel;
 
@@ -88,9 +91,9 @@ public class ClerkMenuController {
     }
 
     @FXML
-    private void goEditAndSearchPatient(MouseEvent event) throws IOException {
-        AnchorPane editAndSearchPatientPage = FXMLLoader.load(getClass().getResource("/gui/fxml/editAndSearchPatient.fxml"));
-        Scene newScene = new Scene(editAndSearchPatientPage);
+    private void goRegisterPatient(MouseEvent event) throws IOException {
+        AnchorPane registerPatientPage = FXMLLoader.load(getClass().getResource("/gui/fxml/clerkMenu.fxml"));
+        Scene newScene = new Scene(registerPatientPage);
         Stage currentStage = (Stage) exitIcon.getScene().getWindow();
         currentStage.setScene(newScene);
     }
@@ -104,7 +107,7 @@ public class ClerkMenuController {
     }
 
     @FXML
-    private void registerPatient(MouseEvent event) {
+    private void editPatientInformation(MouseEvent event) throws IOException {
         String enteredName = nameTF.getText();
         String enteredFatherName = fatherNameTF.getText();
         String enteredAge = ageTF.getText();
@@ -117,31 +120,31 @@ public class ClerkMenuController {
         }
         String enteredInsurance = insuranceCB.getValue();
 
-        successfulRegisterPatientLabel.setVisible(false);
+        successfulEditPatientInformationLabel.setVisible(false);
         patientInformationIncompleteLabel.setVisible(false);
-        unsuccessfulRegisterPatientLabel.setVisible(false);
+        unsuccessfulEditPatientInformationLabel.setVisible(false);
 
         if (!isInsuranceFree) {
             String enteredInsuranceCode = insuranceCodeTF.getText();
             LocalDate enteredExpirationDate = expirationDateDP.getValue();
 
-                if (Utility.isParametersNull(enteredName, enteredFatherName, enteredAge, enteredNationalNumber,
-                        enteredInsurance, enteredInsuranceCode) || enteredExpirationDate == null) {
-                    patientInformationIncompleteLabel.setVisible(true);
-                } else {
-                    User.registerNewPatient(enteredName, enteredFatherName, Integer.parseInt(enteredAge),
-                            Integer.parseInt(enteredNationalNumber), enteredGender,
-                            Insurance.searchWithName(enteredInsurance), Integer.parseInt(enteredInsuranceCode),
-                            enteredExpirationDate);
-                            successfulRegisterPatientLabel.setVisible(true);
-                }
+            if (Utility.isParametersNull(enteredName, enteredFatherName, enteredAge, enteredNationalNumber,
+                    enteredInsurance, enteredInsuranceCode) || enteredExpirationDate == null) {
+                patientInformationIncompleteLabel.setVisible(true);
+            } else {
+                Patient.workingPatient.updateInfo(enteredName, enteredFatherName, Integer.parseInt(enteredAge),
+                        Integer.parseInt(enteredNationalNumber), enteredGender,
+                        Insurance.searchWithName(enteredInsurance), Integer.parseInt(enteredInsuranceCode),
+                        enteredExpirationDate);
+                successfulEditPatientInformationLabel.setVisible(true);
+            }
         } else {
             if (Utility.isParametersNull(enteredName, enteredFatherName, enteredAge, enteredNationalNumber)) {
                 patientInformationIncompleteLabel.setVisible(true);
             } else {
-                User.registerNewPatient(enteredName, enteredFatherName, Integer.parseInt(enteredAge),
+                Patient.workingPatient.updateInfo(enteredName, enteredFatherName, Integer.parseInt(enteredAge),
                         Integer.parseInt(enteredNationalNumber), enteredGender);
-                successfulRegisterPatientLabel.setVisible(true);
+                successfulEditPatientInformationLabel.setVisible(true);
             }
         }
     }
@@ -168,5 +171,21 @@ public class ClerkMenuController {
 
         insuranceCB.setValue(Insurance.AZAD.getInsuranceName());
         insuranceCB.setItems(insurances);
+
+        nameTF.setText(Patient.workingPatient.getName());
+        fatherNameTF.setText(Patient.workingPatient.getFatherName());
+        ageTF.setText(Integer.toString(Patient.workingPatient.getAge()));
+        nationalNumberTF.setText(Integer.toString(Patient.workingPatient.getNationalNumber()));
+        if (Patient.workingPatient.getGender().equals(Gender.MALE)) {
+            genderTG.selectToggle(maleRB);
+        }
+        insuranceCB.setValue(Patient.workingPatient.getInsurance().getInsuranceName());
+        if (!Patient.workingPatient.getInsurance().equals(Insurance.AZAD)) {
+            insuranceCodeTF.setDisable(false);
+            expirationDateDP.setDisable(false);
+            isInsuranceFree = false;
+            insuranceCodeTF.setText(Integer.toString(Patient.workingPatient.getInsuranceCode()));
+            expirationDateDP.setValue(Patient.workingPatient.getExpirationDate());
+        }
     }
 }

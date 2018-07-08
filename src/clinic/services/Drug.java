@@ -1,4 +1,17 @@
 package clinic.services;
 
-public class Drug {
+import utility.Listable;
+
+public class Drug implements Listable {
+
+    private String persianName;
+    private String englishName;
+    private int dosage;
+    private String uses;
+    private String suggestedSchedule;
+
+    @Override
+    public void addToList() {
+
+    }
 }

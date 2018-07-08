@@ -23,6 +23,8 @@ public class Patient implements Listable {
     private int insuranceCode;
     private LocalDate expirationDate;
 
+    public static Patient workingPatient;
+
     private Path path = Paths.get(".\\data\\patients");
 
     private File informationFile;
@@ -79,6 +81,12 @@ public class Patient implements Listable {
                             LocalDate.parse(dataList.get(7))));
                 }
                 dataList.clear();
+
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     } //end static block
@@ -167,6 +175,54 @@ public class Patient implements Listable {
         createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
         writeInfoToFile();
         addToList();
+    }
+
+    public void updateInfo(String newName, String newFatherName, int newAge, int newNationalNumber, Gender newGender) throws IOException {
+        int index = patients.indexOf(workingPatient);
+        int previousNationalNumber = workingPatient.nationalNumber;
+
+        patients.get(index).setName(newName);
+        patients.get(index).setFatherName(newFatherName);
+        patients.get(index).setAge(newAge);
+        patients.get(index).setNationalNumber(newNationalNumber);
+        patients.get(index).setInsurance(Insurance.AZAD);
+
+        if (previousNationalNumber != newNationalNumber) {
+            Path newPath = Paths.get(path.getParent() + "\\" + newNationalNumber);
+            path = newPath;
+            File newDir = new File(newPath.toString());
+            informationFile.renameTo(newDir);
+        }
+        createDirectory();
+        Files.delete(path.resolve("information.txt"));
+        createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
+        writeInfoToFile();
+    }
+
+    public void updateInfo(String newName, String newFatherName, int newAge, int newNationalNumber, Gender newGender,
+                           Insurance newInsurance, int newInsuranceCode, LocalDate newExpirationDate) throws IOException {
+        int index = patients.indexOf(workingPatient);
+        int previousNationalNumber = workingPatient.nationalNumber;
+
+        patients.get(index).setName(newName);
+        patients.get(index).setFatherName(newFatherName);
+        patients.get(index).setAge(newAge);
+        patients.get(index).setNationalNumber(newNationalNumber);
+        patients.get(index).setInsurance(newInsurance);
+        patients.get(index).setInsuranceCode(newInsuranceCode);
+        patients.get(index).setExpirationDate(newExpirationDate);
+
+        if (previousNationalNumber != newNationalNumber) {
+            Path newPath = Paths.get(path.getParent() + "\\" + newNationalNumber);
+            path = newPath;
+            File newDir = new File(path.getParent() + "\\" + newNationalNumber);
+            informationFile.renameTo(newDir);
+        }
+
+        createDirectory();
+        Files.delete(path.resolve("information.txt"));
+        createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
+        writeInfoToFile();
     }
 
     @Override

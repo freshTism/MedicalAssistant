@@ -47,12 +47,12 @@
                   </JFXButton>
                   <Label fx:id="roleLabel" layoutX="202.0" layoutY="14.0" text="نقش" textFill="#fbfdff">
                      <font>
-                        <Font name="IRANSans" size="15.0" />
+                        <Font name="IRANSans Bold" size="15.0" />
                      </font>
                   </Label>
                   <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="174.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" text="نام کاربری" textAlignment="RIGHT" textFill="#fbfdff">
                      <font>
-                        <Font name="IRANSans" size="15.0" />
+                        <Font name="IRANSans Bold" size="15.0" />
                      </font>
                   </Label>
                   <JFXButton layoutY="324.0" onMouseClicked="#goSearchAndVisitPatient" prefHeight="96.0" prefWidth="200.0" ripplerFill="#d8f0de" text="ویزیت بیمار" textFill="#fbfdff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

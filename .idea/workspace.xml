@@ -2,41 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/exceptions/patientExcetions/PatientInformationIncompleteException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/DoctorMenuController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/SearchAndVisitPatientController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/ShowAndEaditPatientInformationController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/clerkMenu.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/doctorMenu.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/searchAndVisitPatient.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/showAndEaditPatientInformation.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data/patients/23/information.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data/patients/452/information.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ShowAndEditPatientInformationController.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/showAndEditPatientInformation.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/controller/ShowAndEditPatientInformationController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gui/fxml/showAndEditPatientInformation.fxml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data/users/infoList.txt" afterPath="$PROJECT_DIR$/data/users/infoList.txt" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/customer/Insurance.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/customer/Insurance.class" />
       <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/customer/Patient.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/customer/Patient.class" />
       <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/members/User.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/members/User.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/services/Drug.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/clinic/services/Drug.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ClerkMenuController.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ClerkMenuController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ControllerManager.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ControllerManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/MainItemsController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/registerUserController.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/registerUserController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/mainItems.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/registerUser.fxml" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/registerUser.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/utility/Gender.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/utility/Gender.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/utility/Utility.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/utility/Utility.class" />
-      <change beforePath="$PROJECT_DIR$/src/clinic/customer/Insurance.java" afterPath="$PROJECT_DIR$/src/clinic/customer/Insurance.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/EditAndSearchPatientController.class" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/EditAndSearchPatientController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/controller/ShowAndEaditPatientInformationController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/editAndSearchPatient.fxml" afterPath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/editAndSearchPatient.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/MedicalAssistant/gui/fxml/showAndEaditPatientInformation.fxml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/clinic/customer/Patient.java" afterPath="$PROJECT_DIR$/src/clinic/customer/Patient.java" />
       <change beforePath="$PROJECT_DIR$/src/clinic/members/User.java" afterPath="$PROJECT_DIR$/src/clinic/members/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/clinic/services/Drug.java" afterPath="$PROJECT_DIR$/src/clinic/services/Drug.java" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java" afterPath="$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java" />
       <change beforePath="$PROJECT_DIR$/src/gui/controller/ControllerManager.java" afterPath="$PROJECT_DIR$/src/gui/controller/ControllerManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/MainItemsController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/registerUserController.java" afterPath="$PROJECT_DIR$/src/gui/controller/registerUserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/gui/fxml/mainItems.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/gui/fxml/registerUser.fxml" afterPath="$PROJECT_DIR$/src/gui/fxml/registerUser.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Gender.java" afterPath="$PROJECT_DIR$/src/utility/Gender.java" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Utility.java" afterPath="$PROJECT_DIR$/src/utility/Utility.java" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java" afterPath="$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/ShowAndEaditPatientInformationController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/clerkMenu.fxml" afterPath="$PROJECT_DIR$/src/gui/fxml/clerkMenu.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/doctorMenu.fxml" afterPath="$PROJECT_DIR$/src/gui/fxml/doctorMenu.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml" afterPath="$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/showAndEaditPatientInformation.fxml" afterPath="" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,23 +100,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Manager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Manager.java">
+      <file leaf-file-name="ShowAndEditPatientInformationController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/controller/ShowAndEditPatientInformationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+            <state relative-caret-position="322">
+              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2821#2822#0" expanded="true" />
+                <element signature="e#2851#2852#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClerkMenuController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Visit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clinic/services/Visit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Prescribing.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clinic/services/Prescribing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Drug.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clinic/services/Drug.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClerkMenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="167" column="50" lean-forward="false" selection-start-line="167" selection-start-column="50" selection-end-line="167" selection-end-column="50" />
+            <state relative-caret-position="1239">
+              <caret line="153" column="35" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2670#2671#0" expanded="true" />
@@ -137,8 +160,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clinic/members/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+            <state relative-caret-position="384">
+              <caret line="125" column="24" lean-forward="false" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -151,8 +174,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -162,6 +185,7 @@
       <find>login</find>
       <find>log</find>
       <find>roles</find>
+      <find>informationFile</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -180,7 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/clinic/Prescribing.java" />
         <option value="$PROJECT_DIR$/src/clinic/Visit.java" />
         <option value="$PROJECT_DIR$/src/utility/Insurance.java" />
@@ -190,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/clinic/User.java" />
         <option value="$PROJECT_DIR$/src/clinic/Clerk.java" />
         <option value="$PROJECT_DIR$/src/clinic/Doctor.java" />
-        <option value="$PROJECT_DIR$/src/clinic/services/Drug.java" />
         <option value="$PROJECT_DIR$/src/utility/Listable.java" />
         <option value="$PROJECT_DIR$/src/gui/login.fxml" />
         <option value="$PROJECT_DIR$/src/exceptions/UserNotFound.java" />
@@ -217,17 +239,22 @@
         <option value="$PROJECT_DIR$/src/exceptions/patientExcetions/PatientInformationIncomplete.java" />
         <option value="$PROJECT_DIR$/src/exceptions/patientExcetions/PatientInformationIncompleteException.java" />
         <option value="$PROJECT_DIR$/src/utility/Utility.java" />
-        <option value="$PROJECT_DIR$/src/gui/controller/ControllerManager.java" />
         <option value="$PROJECT_DIR$/src/gui/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/gui/controller/registerUserController.java" />
         <option value="$PROJECT_DIR$/src/clinic/customer/Insurance.java" />
         <option value="$PROJECT_DIR$/src/utility/Gender.java" />
         <option value="$PROJECT_DIR$/src/gui/fxml/showAndEaditPatientInformation.fxml" />
-        <option value="$PROJECT_DIR$/src/clinic/customer/Patient.java" />
-        <option value="$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml" />
         <option value="$PROJECT_DIR$/src/gui/fxml/searchAndVisitPatient.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/controller/ControllerManager.java" />
         <option value="$PROJECT_DIR$/src/clinic/members/User.java" />
+        <option value="$PROJECT_DIR$/src/gui/controller/ShowAndEaditPatientInformationController.java" />
+        <option value="$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/showAndEditPatientInformation.fxml" />
         <option value="$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java" />
+        <option value="$PROJECT_DIR$/src/clinic/services/Drug.java" />
+        <option value="$PROJECT_DIR$/src/gui/controller/ShowAndEditPatientInformationController.java" />
+        <option value="$PROJECT_DIR$/src/clinic/customer/Patient.java" />
       </list>
     </option>
   </component>
@@ -578,12 +605,12 @@
       <workItem from="1529776130114" duration="83470000" />
       <workItem from="1530603857412" duration="77000" />
       <workItem from="1530609313552" duration="46822000" />
-      <workItem from="1530887131192" duration="26488000" />
+      <workItem from="1530887131192" duration="48596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233922000" />
+    <option name="totallyTimeSpent" value="256030000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,7 +680,7 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -662,13 +689,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utility/Listable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
@@ -681,20 +701,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/clinic/services/Drug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinic/services/Prescribing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility/Listable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -734,22 +740,6 @@
     <entry file="file://$USER_HOME$/Desktop/SearchBar.fontawesomefx-glyphsbrowser-1.3.0/fontawesomefx-glyphsbrowser-1.3.0/bin/fontawesomefx-glyphsbrowser" />
     <entry file="file://$PROJECT_DIR$/src/gui/mainItems.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="2412" column="0" lean-forward="false" selection-start-line="2412" selection-start-column="0" selection-end-line="2412" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinic/services/Visit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/login.fxml" />
     <entry file="file://$PROJECT_DIR$/src/gui/registerUser.fxml" />
     <entry file="file://$PROJECT_DIR$/src/gui/fxml/registerUser.fxml">
@@ -878,25 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinic/customer/Insurance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/clerkMenu.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="192" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility/Gender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -908,58 +879,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/controller/ShowAndEaditPatientInformationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/showAndEaditPatientInformation.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinic/customer/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/controller/SearchAndVisitPatientController.java">
@@ -981,40 +906,155 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/controller/ControllerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinic/members/User.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/controller/ControllerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+        <state relative-caret-position="230">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/showAndEaditPatientInformation.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="202" column="42" lean-forward="true" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/customer/Insurance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/editAndSearchPatient.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="310" lean-forward="false" selection-start-line="14" selection-start-column="310" selection-end-line="14" selection-end-column="310" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/showAndEditPatientInformation.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="319" lean-forward="false" selection-start-line="22" selection-start-column="319" selection-end-line="22" selection-end-column="319" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/clerkMenu.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="192" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/controller/EditAndSearchPatientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#855#856#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/controller/ClerkMenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="167" column="50" lean-forward="false" selection-start-line="167" selection-start-column="50" selection-end-line="167" selection-end-column="50" />
+        <state relative-caret-position="1239">
+          <caret line="153" column="35" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2670#2671#0" expanded="true" />
             <element signature="e#2700#2701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/services/Prescribing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/services/Visit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/services/Drug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/members/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="125" column="24" lean-forward="false" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="1800" column="0" lean-forward="true" selection-start-line="1800" selection-start-column="0" selection-end-line="1800" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinic/customer/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1863">
+          <caret line="222" column="33" lean-forward="true" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/controller/ShowAndEditPatientInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#2821#2822#0" expanded="true" />
+            <element signature="e#2851#2852#0" expanded="true" />
           </folding>
         </state>
       </provider>

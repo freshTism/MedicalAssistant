@@ -22,8 +22,7 @@ public abstract class User implements Listable {
     protected String password;
     protected Role role;
 
-    public static String usernameLogedIn;
-    public static Role roledLogedIn;
+    public static User workingUser;
 
     private static Path path = Paths.get(".\\data\\users");
 
@@ -106,8 +105,7 @@ public abstract class User implements Listable {
     public static User login(String username, String password) throws UserNotFoundException, IncorrectPaswordException {
         User target = searchUser(username);
             if (target.password.equals(password)) {                  //Check password
-                usernameLogedIn = target.username;
-                roledLogedIn = target.role;
+                workingUser = target;
                 return target;
             } else {
                 throw new IncorrectPaswordException("Incorrect password!");
@@ -138,6 +136,7 @@ public abstract class User implements Listable {
             }
         }
         if (target != null) {
+            Patient.workingPatient = target;
             return target;
         } else {
             throw new PatientNotFoundException("Patient NOT Found!");
