@@ -11,10 +11,6 @@ mashti
 1
  
 منشی
-feri1
-1
- 
-منشی
 man
 5
  
@@ -22,4 +18,7 @@ man
 doci
 d
  
-
+پزشک
+doctor
+3
+ 

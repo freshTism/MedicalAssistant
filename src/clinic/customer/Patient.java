@@ -1,5 +1,8 @@
 package clinic.customer;
 
+import clinic.services.Drug;
+import clinic.services.Visit;
+import exceptions.drugException.DrugNotFoundException;
 import utility.Gender;
 import utility.Listable;
 
@@ -23,11 +26,15 @@ public class Patient implements Listable {
     private int insuranceCode;
     private LocalDate expirationDate;
 
+//    private ArrayList<Visit> visits = new ArrayList<>();
+
     public static Patient workingPatient;
 
     private Path path = Paths.get(".\\data\\patients");
+//    private Path visitsPath;
 
     private File informationFile;
+
     private FileWriter fileWriter;
     private String fwExMessage = "Can not create a FileWriter for Patient whit national number: ";
     private BufferedWriter bufferedWriter;
@@ -45,6 +52,11 @@ public class Patient implements Listable {
         ArrayList<String> dataList = new ArrayList<>();
         String line;
 
+//        BufferedReader visitBufferedReader = null;
+//        String visitLine;
+
+//        ArrayList<Drug> visitDrugs = new ArrayList<>();
+
         if (files.length == 0) {
             System.out.println("The directory is empty.");
         } else {
@@ -58,7 +70,8 @@ public class Patient implements Listable {
             for (File directory : directories) {
                 //Read Patients info
                 try {
-                    bufferedReader = new BufferedReader(new FileReader(directory.getPath() + "\\information.txt"));
+                    bufferedReader = new BufferedReader(new FileReader(directory.getPath()
+                            + "\\information.txt"));
                     while ((line = bufferedReader.readLine()) != null) {
                         dataList.add(line);
                     }
@@ -87,11 +100,63 @@ public class Patient implements Listable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+//                Path patientVisitsFolderPath = Paths.get(directories.get(directory).getPath() + "\\visits");
+//                File patientVisitsFolderFile = new File(patientVisitsFolderPath.toString());
+//
+//                File[] visitsFiles = patientVisitsFolderFile.listFiles();
+//
+//                ArrayList<File> visitsTextFiles = new ArrayList<>();
+//
+//                if (visitsFiles.length == 0) {
+//                    System.out.println("The directory is empty.");
+//                } else {
+//                    //Filter and save directory
+//                    for (File file : visitsFiles) {
+//                        if (file.getName().endsWith(".txt")) {
+//                            visitsTextFiles.add(file);
+//                            try {
+//                                visitBufferedReader = new BufferedReader(new FileReader(file.getPath()));
+//                                while ((visitLine = visitBufferedReader.readLine()) != null) {
+//                                    dataList.add(visitLine);
+//                                }
+//                            } catch (FileNotFoundException e) {
+//                                System.out.println(e.getMessage());
+//                                e.printStackTrace();
+//                            } catch (IOException e) {
+//                                System.out.println(e.getMessage());
+//                                e.printStackTrace();
+//                            }
+//
+//                            for (int drug = 4; drug < dataList.size(); drug++) {
+//                                try {
+//                                    visitDrugs.add(Drug.searchDrug(dataList.get(drug)));
+//                                } catch (DrugNotFoundException e) {
+//                                    System.out.println(e.getMessage());
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//
+//                            patients.get(directory).visits.add(new Visit(dataList.get(0), dataList.get(1), visitDrugs,
+//                                    Integer.parseInt(dataList.get(2)), LocalDate.parse(dataList.get(3))));
+//
+//                            dataList.clear();
+//                            visitDrugs.clear();
+//                            try {
+//                                bufferedReader.close();
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//
+//                        }
+//                    }
+//                }
             }
         }
     } //end static block
 
     //Constructor without insurance(free insurance)
+
     public Patient(String name, String fatherName, int age, int nationalNumber, Gender gender) {
         this.name = name;
         this.fatherName = fatherName;
@@ -100,8 +165,8 @@ public class Patient implements Listable {
         this.gender = gender;
         this.insurance = Insurance.AZAD;
     }
-
     //Constructor with insurance
+
     public Patient(String name, String fatherName, int age, int nationalNumber, Gender gender,
                    Insurance insurance, int insuranceCode, LocalDate expirationDate) {
         this.name = name;
@@ -113,18 +178,19 @@ public class Patient implements Listable {
         this.insuranceCode = insuranceCode;
         this.expirationDate = expirationDate;
     }
-
     //Create a directory for this patient
+
     private void createDirectory() {
         try {
             path = Files.createDirectories(path.resolve(String.valueOf(nationalNumber)));
+//            visitsPath = Files.createDirectories(path.resolve("visits"));
         } catch (IOException e) {
             System.out.println("Can not make a directory for Patient whit national number: " + nationalNumber + "\n");
             e.printStackTrace();
         }
     }
-
     //Create new "appendable" text file
+
     private void createInfoFile(String fileName, String exceptionMessage) {
         informationFile = new File(path + "\\" + fileName);
         try {
@@ -136,8 +202,8 @@ public class Patient implements Listable {
         bufferedWriter = new BufferedWriter(fileWriter);
         outFile = new PrintWriter(bufferedWriter);
     }
-
     //Write patients information in file
+
     private void writeInfoToFile() {
         createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
         if (insurance.equals(Insurance.AZAD)) {
@@ -161,23 +227,23 @@ public class Patient implements Listable {
         }
         outFile.close();
     }
-
     //Add a patient to ArrayList
+
     @Override
     public void addToList() {
         patients.add(new Patient(this.name, this.fatherName, this.age, this.nationalNumber, this.gender,
                 this.insurance, this.insuranceCode, this.expirationDate));
     }
-
     //Create a text file and save patient info to file and ArrayList
+
     public void saveInfo() {
         createDirectory();
         createInfoFile("information.txt", fwExMessage + nationalNumber + "\n");
         writeInfoToFile();
         addToList();
     }
-
-    public void updateInfo(String newName, String newFatherName, int newAge, int newNationalNumber, Gender newGender) throws IOException {
+    public void updateInfo(String newName, String newFatherName, int newAge, int newNationalNumber, Gender newGender)
+            throws IOException {
         int index = patients.indexOf(workingPatient);
         int previousNationalNumber = workingPatient.nationalNumber;
 
@@ -230,6 +296,7 @@ public class Patient implements Listable {
         return name + "\n"
                 + fatherName + "\n"
                 + age + "\n"
+
                 + nationalNumber + "\n"
                 + gender.getGender() + "\n"
                 + insurance.getInsuranceName() + "\n"
@@ -238,6 +305,7 @@ public class Patient implements Listable {
     }
 
     public String getName() { return name; }
+
     public void setName(String name) { this.name = name; }
 
     public String getFatherName() { return fatherName; }
@@ -262,4 +330,8 @@ public class Patient implements Listable {
     public void setExpirationDate(LocalDate expirationDate) { this.expirationDate = expirationDate; }
 
     public static ArrayList<Patient> getPatients() { return patients; }
+    public PrintWriter getOutFile() { return outFile; }
+
+//    public Path getVisitsPath() { return visitsPath; }
+//    public void setVisitsPath(Path visitsPath) { this.visitsPath = visitsPath; }
 }

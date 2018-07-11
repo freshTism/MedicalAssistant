@@ -20,7 +20,7 @@ public class ControllerManager {
     protected static File iconFile;
     protected static Image iconImage;
 
-    protected static void setIconImage(String imagePath, ImageView iconImageView) {
+    public static void setIconImage(String imagePath, ImageView iconImageView) {
         iconPath = Paths.get(imagePath);
         iconFile = new File(iconPath.toString());
         iconImage = new Image(iconFile.toURI().toString());

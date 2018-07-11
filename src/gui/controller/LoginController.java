@@ -52,9 +52,9 @@ public class LoginController {
         try {
             user = Manager.login(enteredUsername,enteredPassword);
             if (user.getRole().equals(Role.CLERK)) {
-                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/clerkMenu.fxml"));
+                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/clerkGUI/clerkMenu.fxml"));
             } else if (user.getRole().equals(Role.DOCTOR)) {
-                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/doctorMenu.fxml"));
+                menuPage = FXMLLoader.load(getClass().getResource("/gui/fxml/doctorGUI/doctorMenu.fxml"));
             }
         } catch (UserNotFoundException e) {
             incorrectPassLable.setVisible(false);
